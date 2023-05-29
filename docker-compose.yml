@@ -1,0 +1,31 @@
+version: "3.9"
+   
+services:
+  db:
+    container_name: urlshortener-postgres
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  web:
+    container_name: urlshortener-django
+    image: django
+    build: .
+    command: >
+      bash -c "python manage.py makemigrations &&
+               python manage.py migrate &&
+               python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - BITLY_API_TOKEN=4155620775411a8dabfd140c59a7451fd4c3b97b
+    depends_on:
+      - db
