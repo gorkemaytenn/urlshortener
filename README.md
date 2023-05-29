@@ -27,8 +27,10 @@ A URL shortener API built with Django and Django Rest Framework.
 2. Build and run the Docker containers:
 
    ```bash
-   docker-compose up --build
+   docker-compose build
+   docker-compose up
    ```
+
 
    This will also apply the Django migrations and start the server.
 
