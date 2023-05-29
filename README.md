@@ -59,4 +59,7 @@ A URL shortener API built with Django and Django Rest Framework.
 
 API documentation can be found at `http://localhost:8000/swagger`.
 
----
+### Postman Collection
+
+You can access the `Postman Collection` [here](https://solar-space-858294.postman.co/workspace/New-Team-Workspace~f3b0174c-14f3-49b3-84e3-bb9b606398c4/collection/19714981-eacba9b3-aeac-4d4c-a6d1-7a3964bfe9d3?action=share&creator=19714981)
+
